@@ -52,19 +52,27 @@ int main()
     queue->Print();
     std::cout << std::endl;
 
+    std::cout << "nuevo eliminado" << std::endl;
+
     queue->Pop();
 
     queue->Print();
 
     std::cout << std::endl;
-
-    queue->Pop();
-
-    queue->Print();
-
-    queue->~Queue();
+    std::cout << "nuevo agregado" << std::endl;
+    queue->Add(new Book("libro 4", "autor 4"));
 
     queue->Print();
+
+    //queue->Pop();
+
+    //queue->Print();
+
+    //queue->~Queue();
+    //queue->Print();
+    //queue->~Queue();
+
+    delete queue;
 
     std::cin.get();
 

@@ -5,16 +5,20 @@ Queue::Queue(){}
 
 Queue::~Queue()
 {
-    Node* temp = first;
-
-    Node* currentHead{};
-
-    while (temp)
+    if(!IsEmpty())
     {
-        currentHead = temp;
-        temp = currentHead->next;
-        delete currentHead;
+        Node* current = first;
+        while (current)
+        {
+            Pop();
+            current = first;
+        }
     }
+    else
+    {
+        std::cout << "La cola esta vacia" << std::endl;
+    }
+    
 }
 
 void Queue::Add(Book* book)
